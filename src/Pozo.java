@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Pozo {
-    private final ArrayList<Ficha> fichas;
+    private final ArrayList<FichaDomino> fichas;
 
     public Pozo() {
         fichas = new ArrayList<>();
@@ -28,11 +28,11 @@ public class Pozo {
         }
     }
 
-    public Ficha retirarFicha() {
+    public FichaDomino retirarFicha() {
         return fichas.remove(new Random().nextInt(fichas.size()));
     }
 
-    public void retirarFicha(Ficha ficha) {
+    public void retirarFicha(FichaDomino ficha) {
         fichas.remove(ficha);
     }
 
@@ -40,9 +40,9 @@ public class Pozo {
         return !fichas.isEmpty();
     }
 
-    public Ficha[] obtenerFichasIniciales() {
+    public FichaDomino[] obtenerFichasIniciales() {
         Random rng = new Random();
-        Ficha[] fichasIniciales = new Ficha[2];
+        FichaDomino[] fichasIniciales = new FichaDomino[2];
         fichasIniciales[0] = fichas.get(rng.nextInt(fichas.size()));
         fichasIniciales[1] = fichas.get(rng.nextInt(fichas.size()));
         return fichasIniciales;

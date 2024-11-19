@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Jugador {
     private String nombre;
     private int puntuacion;
-    private final ArrayList<Ficha> fichas;
+    private final ArrayList<FichaDomino> fichas;
 
     public Jugador() {
         nombre = "";
@@ -15,15 +15,15 @@ public class Jugador {
         puntuacion += puntos;
     }
 
-    public void agregarFicha(Ficha ficha) {
+    public void agregarFicha(FichaDomino ficha) {
         fichas.add(ficha);
     }
 
-    public Ficha retirarFicha(int indiceFicha) {
+    public FichaDomino retirarFicha(int indiceFicha) {
         return fichas.remove(indiceFicha);
     }
 
-    public ArrayList<Ficha> getFichas() {
+    public ArrayList<FichaDomino> getFichas() {
         return fichas;
     }
 

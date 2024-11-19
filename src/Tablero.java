@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class Tablero {
-    private final ArrayList<Ficha> fichas;
+    private final ArrayList<FichaDomino> fichas;
     public Tablero() {
         fichas = new ArrayList<>();
     }
 
-    public void colocarFicha(Ficha ficha) {
+    public void colocarFicha(FichaDomino ficha) {
         fichas.addLast(ficha);
     }
 
-    public Ficha obtenerUltimaFicha() {
+    public FichaDomino obtenerUltimaFicha() {
         return fichas.getLast();
     }
 

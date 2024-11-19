@@ -57,9 +57,4 @@ public class FichaTriomino extends FichaDomino {
         }
         orientacion = orientacion.cambiar();
     }
-
-    @Override
-    public int compareTo(Ficha otraFicha) {
-        return Integer.compare(this.sumarValores(), otraFicha.sumarValores());
-    }
 }

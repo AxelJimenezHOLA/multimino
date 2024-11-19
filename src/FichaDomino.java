@@ -1,9 +1,24 @@
-public class FichaDomino extends Ficha {
+public class FichaDomino implements Movible {
+    protected int valorA;
+    protected int valorB;
+    protected Orientacion orientacion;
 
     public FichaDomino(int valorA, int valorB) {
         this.valorA = valorA;
         this.valorB = valorB;
         this.orientacion = Orientacion.VERTICAL;
+    }
+
+    public int getValorA() {
+        return valorA;
+    }
+
+    public int getValorB() {
+        return valorB;
+    }
+
+    public Orientacion getOrientacion() {
+        return orientacion;
     }
 
     public void intercambiarValores() {
@@ -41,10 +56,5 @@ public class FichaDomino extends Ficha {
         if (orientacion == Orientacion.HORIZONTAL) {
             intercambiarValores();
         }
-    }
-
-    @Override
-    public int compareTo(Ficha otraFicha) {
-        return Integer.compare(this.sumarValores(), otraFicha.sumarValores());
     }
 }

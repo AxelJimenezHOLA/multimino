@@ -35,7 +35,7 @@ public class Juego {
     }
 
     private void determinarJugadorInicial() {
-        Ficha[] fichasIniciales = pozo.obtenerFichasIniciales();
+        FichaDomino[] fichasIniciales = pozo.obtenerFichasIniciales();
         int[] valores = new int[2];
 
         do {
@@ -73,7 +73,7 @@ public class Juego {
             return;
         }
 
-        Ficha fichaSeleccionada;
+        FichaDomino fichaSeleccionada;
         boolean colocable;
 
         do {
@@ -90,15 +90,15 @@ public class Juego {
         } while (!colocable);
     }
 
-    private Ficha seleccionarFichaParaJugar(Jugador jugador) {
-        Ficha fichaSeleccionada = null;
+    private FichaDomino seleccionarFichaParaJugar(Jugador jugador) {
+        FichaDomino fichaSeleccionada = null;
         int opcionFicha;
         ScannerHandler entrada = new ScannerHandler();
-        ArrayList<Ficha> fichasJugables = jugador.getFichas();
+        ArrayList<FichaDomino> fichasJugables = jugador.getFichas();
         boolean jugadaValida;
         do {
             for (int i = 0; i < fichasJugables.size(); i++) {
-                Ficha ficha = fichasJugables.get(i);
+                FichaDomino ficha = fichasJugables.get(i);
                 System.out.printf("%d. %s%n", (i + 1), ficha.mostrarSimple());
             }
 
@@ -120,8 +120,8 @@ public class Juego {
         return jugador.getFichas().stream().anyMatch(this::esFichaJugable);
     }
 
-    private boolean esFichaJugable(Ficha fichaParaJugar) {
-        Ficha ultimaFichaJugada = tablero.obtenerUltimaFicha();
+    private boolean esFichaJugable(FichaDomino fichaParaJugar) {
+        FichaDomino ultimaFichaJugada = tablero.obtenerUltimaFicha();
 
         if (ultimaFichaJugada instanceof FichaTriomino) {
             if (fichaParaJugar instanceof FichaTriomino) {
